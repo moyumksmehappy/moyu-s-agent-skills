@@ -9,6 +9,22 @@ Agent 创建 Skill 的权威规范文档。
 
 ---
 
+## Skill Resources
+
+本 Skill 提供以下资源供 Agent 调用：
+
+| 资源 | 路径 | 用途 |
+|------|------|------|
+| 生成脚本 | `scripts/generate_skill.py` | 创建标准 Skill 目录结构 |
+
+**脚本调用方式：**
+
+```bash
+python scripts/generate_skill.py --name "<NAME>" --description "<DESCRIPTION>" --output "<PATH>"
+```
+
+---
+
 ## 一、Skill 规范概览
 
 ### 1.1 核心概念
@@ -184,7 +200,8 @@ version: 1.0.0
 
 | 准则 | 说明 |
 |------|------|
-| **不要详细代码** | 只描述逻辑流程，具体实现交给 LLM |
+| **不写实现代码** | 不放 Python/JS 等实现代码，逻辑交给 LLM |
+| **允许规范代码** | 可放 YAML、JSON 等配置/规范代码 |
 | **保持简洁** | 避免冗余内容，核心规则优先 |
 | **声明式优先** | 使用"做什么"而非"怎么做" |
 
